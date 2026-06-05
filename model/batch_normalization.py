@@ -6,10 +6,6 @@ class Solution:
     def batch_norm(self, x: List[List[float]], gamma: List[float], beta: List[float],
                    running_mean: List[float], running_var: List[float],
                    momentum: float, eps: float, training: bool) -> Tuple[List[List[float]], List[float], List[float]]:
-        # During training: normalize using batch statistics, then update running stats
-        # During inference: normalize using running stats (no batch stats needed)
-        # Apply affine transform: y = gamma * x_hat + beta
-        # Return (y, running_mean, running_var), all rounded to 4 decimals as lists
         x = np.array(x)
         gamma = np.array(gamma)
         beta = np.array(beta)
